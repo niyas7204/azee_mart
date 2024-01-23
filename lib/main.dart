@@ -1,9 +1,12 @@
 import 'package:anm_mart/constants/global_colors.dart';
-import 'package:anm_mart/features/auth/presentation/screens/auth_screen.dart';
+import 'package:anm_mart/features/auth/view/screens/auth_screen.dart';
+import 'package:anm_mart/firebase_options.dart';
 import 'package:anm_mart/routers.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
