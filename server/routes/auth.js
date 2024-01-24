@@ -20,11 +20,12 @@ authRouter.post("/user/auth/signup",async (req,res)=>{
       user=await user.save();
       res.json({user:user})  
    } catch (error) {
-      res.status(500).json({erro:e.message});
+      res.status(500).json({error:error.message});
    }
   
 });
 authRouter.get("/user/auth",(req,res)=>{
+   console.log("aaaaaaa");
    res.json({
        name:"nnnnn"
    })
