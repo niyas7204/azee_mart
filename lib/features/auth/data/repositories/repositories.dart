@@ -1,8 +1,9 @@
+import 'package:anm_mart/core/response_handle.dart';
+import 'package:anm_mart/models/user_model.dart';
+
 abstract class AuthenticationServices {
-  Future<void> signUp({
-    required String id,
-    required String userName,
-    required String email,
-    required String address,
-  });
+  Future<ResponseHandler<UserModel>> signUp(
+      {required String userName,
+      required String email,
+      required String password});
 }

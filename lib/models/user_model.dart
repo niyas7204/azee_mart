@@ -2,6 +2,7 @@ class UserModel {
   final String id;
   final String userName;
   final String email;
+
   final String address;
   final String token;
 
@@ -11,10 +12,11 @@ class UserModel {
       required this.email,
       required this.address,
       required this.token});
+
   factory UserModel.fromjson(Map<String, dynamic> map) {
     return UserModel(
       id: map['_id'] ?? '',
-      userName: map['userName'] ?? '',
+      userName: map['name'] ?? '',
       email: map['email'] ?? '',
       address: map['address'] ?? '',
       token: map['token'] ?? '',

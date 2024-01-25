@@ -1,12 +1,10 @@
 import 'package:anm_mart/constants/global_colors.dart';
 import 'package:anm_mart/features/auth/view/screens/auth_screen.dart';
-import 'package:anm_mart/firebase_options.dart';
-import 'package:anm_mart/routers.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:anm_mart/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: GlobalColors.backgroundColor,
           primaryColorLight: GlobalColors.secondaryColor,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             elevation: 0,
           ),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

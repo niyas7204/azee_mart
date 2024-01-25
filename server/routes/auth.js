@@ -2,7 +2,7 @@ const express=require("express");
 const User=require("../models/user");
 const bcrypjs=require("bcryptjs");
 const authRouter=express.Router();
-
+// user signup
 authRouter.post("/user/auth/signup",async (req,res)=>{
    try {
       const {name,email,password}=req.body;
@@ -24,11 +24,6 @@ authRouter.post("/user/auth/signup",async (req,res)=>{
    }
   
 });
-authRouter.get("/user/auth",(req,res)=>{
-   console.log("aaaaaaa");
-   res.json({
-       name:"nnnnn"
-   })
-   });
+
 
 module.exports=authRouter;

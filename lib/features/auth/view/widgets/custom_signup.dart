@@ -1,7 +1,12 @@
+import 'dart:developer';
+
 import 'package:anm_mart/common/widgets/global_texts.dart';
 import 'package:anm_mart/common/widgets/spaces.dart';
+import 'package:anm_mart/constants/url.dart';
 import 'package:anm_mart/features/auth/components/signup_box.dart';
+import 'package:anm_mart/features/auth/data/implimentation/data_source.dart';
 import 'package:anm_mart/features/auth/view/widgets/form_field.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class CustomSignUp extends StatelessWidget {
@@ -58,7 +63,12 @@ class CustomSignUp extends StatelessWidget {
                                       formKey: formKey))),
                       SpaceSized.space10H,
                       ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            AuthImplimentation().signUp(
+                                userName: controllers[0].text,
+                                email: controllers[1].text,
+                                password: controllers[2].text);
+                          },
                           child: GlobalTexts.labelText('Sign Up')),
                     ],
                   ),
